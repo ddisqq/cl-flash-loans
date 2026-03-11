@@ -14,14 +14,14 @@
 ;;;; - Reentrancy protection
 ;;;; - Borrowing limits and rate limiting
 ;;;;
-;;;; Author: CLPIC Development Team
+;;;; Author: Parkian Company LLC
 ;;;; License: MIT
 ;;;; ============================================================================
 
 (defsystem "cl-flash-loans"
   :name "CL-FLASH-LOANS"
   :version "1.0.0"
-  :author "CLPIC Development Team"
+  :author "Parkian Company LLC"
   :license "MIT"
   :description "Atomic flash loan protocol for Common Lisp"
   :long-description "A standalone, pure Common Lisp implementation of an atomic
@@ -47,7 +47,7 @@ fee calculation, and security protections without external dependencies."
 (defsystem "cl-flash-loans/test"
   :name "CL-FLASH-LOANS Tests"
   :version "1.0.0"
-  :author "CLPIC Development Team"
+  :author "Parkian Company LLC"
   :license "MIT"
   :description "Test suite for cl-flash-loans"
   :depends-on ("cl-flash-loans")
