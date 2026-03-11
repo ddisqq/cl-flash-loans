@@ -1,0 +1,59 @@
+;;;; ============================================================================
+;;;; CL-FLASH-LOANS - Atomic Flash Loan Protocol for Common Lisp
+;;;; ============================================================================
+;;;;
+;;;; A standalone, dependency-free flash loan protocol implementation in pure
+;;;; Common Lisp. Provides atomic loan execution with callback handling for
+;;;; DeFi applications.
+;;;;
+;;;; Features:
+;;;; - Uncollateralized flash loans with atomic execution
+;;;; - Callback interface for custom operation execution
+;;;; - Liquidity pool management
+;;;; - Fee calculation and distribution
+;;;; - Reentrancy protection
+;;;; - Borrowing limits and rate limiting
+;;;;
+;;;; Author: CLPIC Development Team
+;;;; License: MIT
+;;;; ============================================================================
+
+(defsystem "cl-flash-loans"
+  :name "CL-FLASH-LOANS"
+  :version "1.0.0"
+  :author "CLPIC Development Team"
+  :license "MIT"
+  :description "Atomic flash loan protocol for Common Lisp"
+  :long-description "A standalone, pure Common Lisp implementation of an atomic
+flash loan protocol. Provides loan execution, callback handling, pool management,
+fee calculation, and security protections without external dependencies."
+
+  :class :package-inferred-system
+  :defsystem-depends-on ()
+  :depends-on ()
+
+  :components
+  ((:file "package")
+   (:module "src"
+    :serial t
+    :components
+    ((:file "util")
+     (:file "loan")
+     (:file "callback")
+     (:file "pool"))))
+
+  :in-order-to ((test-op (test-op "cl-flash-loans/test"))))
+
+(defsystem "cl-flash-loans/test"
+  :name "CL-FLASH-LOANS Tests"
+  :version "1.0.0"
+  :author "CLPIC Development Team"
+  :license "MIT"
+  :description "Test suite for cl-flash-loans"
+  :depends-on ("cl-flash-loans")
+  :components
+  ((:module "test"
+    :components
+    ((:file "test-flash"))))
+  :perform (test-op (op c)
+             (symbol-call :cl-flash-loans.test :run-tests)))

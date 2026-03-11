@@ -1,0 +1,22 @@
+CL-FLASH-LOANS
+==============
+
+This software was extracted from CLPIC (Common Lisp P2P Intellectual Property Chain).
+
+Original Source: https://github.com/clpic/clpic
+Extracted Module: src/defi/flash/
+
+The flash loan protocol implementation provides:
+- Atomic flash loan execution
+- Callback interface handling
+- Liquidity pool management
+- Fee calculation and distribution
+- Reentrancy protection
+
+This standalone version removes all external dependencies and provides a
+pure Common Lisp implementation suitable for integration into other projects.
+
+Authors:
+- CLPIC Development Team
+
+License: MIT
